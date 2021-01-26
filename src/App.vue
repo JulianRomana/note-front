@@ -1,9 +1,10 @@
 <template>
-  <div class="container h-full w-screen mx-auto py-20 px-16 flex flex-col items-center">
+  <div class="container min-h-screen h-full max-w-full py-20 px-16 flex flex-col items-center">
+    <Navbar />
     <router-view />
   </div>
 </template>
 
 <script setup>
-
+import { Navbar } from './components/Navbar'
 </script>
