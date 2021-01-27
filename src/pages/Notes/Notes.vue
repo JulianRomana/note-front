@@ -14,13 +14,14 @@
       <NoteListItem 
         :note="note" 
         @delete="removeNote(note.id)"
+        @update="updateNote(note.id, $event)"
       />
     </div>
   </div>
 </template>
 
 <script setup>
-import { notesComputed, fetchNotes, removeNote } from '../../store/notes-store'
+import { notesComputed, fetchNotes, removeNote, updateNote } from '../../store/notes-store'
 import NoteListItem from './components/NotesListItem.vue'
 
 fetchNotes()

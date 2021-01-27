@@ -1,5 +1,5 @@
 import { ref, computed, } from 'vue'
-import { getNote, deleteNote } from '../lib/note'
+import { getNote, deleteNote, putNote } from '../lib/note'
 
 const notes = ref([])
 const notesComputed = computed(() => notes.value)
@@ -14,7 +14,7 @@ const fetchNotes = async () => {
   }
 }
 
-const removeNote = async id =>{
+const removeNote = async id => {
   try {
     await deleteNote(id)
     updateNotes(id)
@@ -23,8 +23,17 @@ const removeNote = async id =>{
   }
 }
 
+const updateNote = async (id, data) => {
+  try {
+    await putNote(id, data)
+  } catch (error) {
+    console.error(error)
+  }
+}
+
 export {
   fetchNotes,
   removeNote,
   notesComputed,
+  updateNote,
 }

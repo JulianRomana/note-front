@@ -24,7 +24,7 @@
   <div class="grid grid-flow-col gap-4 mt-auto">
     <button
       class="bg-gray-700 px-4 py-2 text-white mt-6 rounded-sm text-lg"
-      @click="isEditing = !isEditing"
+      @click="edit"
     >
       {{ isEditing ? 'Save' : 'Edit' }}
     </button>
@@ -37,14 +37,20 @@
   </div>
 </template>
 
-<script setup="props">
+<script setup>
 import { ref, toRefs, defineProps, defineEmit } from 'vue'
 
+const props = defineProps({ note: Object })
+const emit = defineEmit(['delete', 'update'])
+
+const isEditing = ref(false)
 const { note } = toRefs(props)
 const { value: title } = ref(note.value.title)
 const { value: content } = ref(note.value.title)
 
-const isEditing = ref(false)
-const props = defineProps({ note: Object })
-const emits = defineEmit(['delete', 'update'])
+const edit = () => {
+  isEditing.value = !isEditing.value
+  if (!isEditing.value) emit('update', { title, content })
+}
+
 </script>

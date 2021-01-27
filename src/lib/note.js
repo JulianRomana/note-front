@@ -22,16 +22,22 @@ const getNote = async () => {
 
 const deleteNote = async id => {
   try {
-    console.log(id)
-    const { data } = await axios.delete(`${API_URL}/note/${id}`)
-    return data
+    return axios.delete(`${API_URL}/note/${id}`)
+  } catch(err) {
+    Promise.reject(err)
+  }
+}
+const putNote = async (id, data) => {
+  try {
+    return axios.put(`${API_URL}/note/${id}`, { data })
   } catch(err) {
     Promise.reject(err)
   }
 }
 
 export {
-  postNote,
   getNote,
+  postNote,
+  putNote,
   deleteNote,
 }
