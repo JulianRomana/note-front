@@ -5,16 +5,16 @@
     class="flex flex-col gap-8 mt-16 max-w-2xl w-full" 
     @submit.prevent="submitNote"
   >
-    <input 
+    <input
       v-model="title" 
-      class="h-12 p-3 rounded-sm text-gray-700 text-lg" 
+      class="input" 
       type="text" 
       name="title" 
       placeholder="Groceries to buy"
     >
     <textarea 
       v-model="content" 
-      class="h-24 p-3 rounded-sm text-gray-700 text-lg resize-none" 
+      class="textarea h-24" 
       name="content" 
       rows="20" 
       cols="50" 
