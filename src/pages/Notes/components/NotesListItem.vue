@@ -1,5 +1,8 @@
 <template>
-  <div class="flex flex-col items-center bg-white p-4 h-96 rounded-md">
+  <form
+    class="flex flex-col items-center bg-white p-4 h-96 rounded-md"
+    @submit.prevent="edit"
+  >
     <h3
       v-if="!isEditing"
       class="text-gray-700 text-lg font-bold"
@@ -21,22 +24,23 @@
       v-else
       v-model="content"
       class="textarea mt-4 border border-solid border-gray-200 w-full h-full"
+      @keypress.enter.exact="edit"
     />
     <div class="grid grid-flow-col gap-4 mt-auto">
       <button
+        type="submit"
         class="bg-gray-700 px-4 py-2 text-white mt-6 rounded-sm text-lg"
-        @click="edit"
       >
         {{ isEditing ? 'Save' : 'Edit' }}
       </button>
-      <button 
+      <button
         class="bg-red-700 px-4 py-2 text-white mt-6 rounded-sm text-lg"
         @click="$emit('delete')"
       >
         Remove
       </button>
     </div>
-  </div>
+  </form>
 </template>
 
 <script setup>
@@ -47,11 +51,11 @@ const emit = defineEmit(['delete', 'update'])
 
 const isEditing = ref(false)
 const { note } = toRefs(props)
-const { value: title } = ref(note.value.title)
-const { value: content } = ref(note.value.content)
+const title = ref(note.value.title)
+const content = ref(note.value.content)
 
 const edit = () => {
   isEditing.value = !isEditing.value
-  if (!isEditing.value) emit('update', { title, content })
+  if (!isEditing.value) emit('update', { title: title.value, content: content.value })
 }
 </script>

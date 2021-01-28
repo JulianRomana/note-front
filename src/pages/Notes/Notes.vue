@@ -2,14 +2,14 @@
   <h1 class="text-4xl">
     Your notes
   </h1>
-  <div 
+  <div
     v-if="notesComputed.length"
-    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 justify-center" 
+    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 justify-center"
   >
-    <NoteListItem 
+    <NoteListItem
       v-for="note in notesComputed"
       :key="note.id"
-      :note="note" 
+      :note="note"
       @delete="removeNote(note.id)"
       @update="updateNote(note.id, $event)"
     />

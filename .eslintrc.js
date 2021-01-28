@@ -16,6 +16,7 @@ module.exports = {
     }],
     semi: ['error', 'never'],
     quotes: ['error', 'single'],
+    'no-trailing-spaces': 'error',
     'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 1 }],
     'vue/no-multiple-template-root': [0],
     'no-param-reassign': 'off',

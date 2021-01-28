@@ -1,14 +1,14 @@
-import { createWebHistory, createRouter } from 'vue-router';
+import { createWebHistory, createRouter } from 'vue-router'
 import { Note}  from '../pages/Note'
 import { Notes } from '../pages/Notes'
 
 const routes = [
-  { path: '/', 
-    name: 'note', 
+  { path: '/',
+    name: 'note',
     component: Note,
   },
-  { path: '/notes', 
-    name: 'notes', 
+  { path: '/notes',
+    name: 'notes',
     component: Notes,
   },
 ]

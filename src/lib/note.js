@@ -3,7 +3,6 @@ import axios from 'axios'
 const { VITE_API_URL: API_URL} = import.meta.env
 
 const postNote = async ({ title, content }) => {
-  console.log(title, content)
   try {
     const { data } = await axios.post(`${API_URL}/note`, { title, content })
     return data
@@ -30,7 +29,7 @@ const deleteNote = async id => {
 }
 const putNote = async (id, data) => {
   try {
-    return axios.put(`${API_URL}/note/${id}`, { data })
+    return axios.put(`${API_URL}/note/${id}`, data)
   } catch(err) {
     Promise.reject(err)
   }

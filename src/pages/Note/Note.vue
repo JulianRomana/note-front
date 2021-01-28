@@ -1,7 +1,7 @@
 <template>
   <h1 class="text-4xl">Welcome to notes</h1>
   <h3 class="mt-4">Enter something that you might forget!</h3>
-  <NoteForm 
+  <NoteForm
     v-model:title="title"
     v-model:content="content"
     @create-note="submitNote"
@@ -11,14 +11,13 @@
 <script setup>
 import { ref } from 'vue'
 import { NoteForm } from '../../components/NoteForm'
-import { postNote } from '../../lib/note'
+import { addNote } from '../../store/notes-store'
 
 const title = ref('')
 const content = ref('')
 
 const submitNote = () => {
-  console.log(title.value, content.value)
-  postNote({ title: title.value, content: content.value })
+  addNote({ title: title.value, content: content.value })
     .finally(() => {
       title.value = ''
       content.value = ''
