@@ -3,6 +3,7 @@ import axios from 'axios'
 const { VITE_API_URL: API_URL} = import.meta.env
 
 const postNote = async ({ title, content }) => {
+  console.log(title, content)
   try {
     const { data } = await axios.post(`${API_URL}/note`, { title, content })
     return data

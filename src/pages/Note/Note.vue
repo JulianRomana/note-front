@@ -1,42 +1,23 @@
 <template>
   <h1 class="text-4xl">Welcome to notes</h1>
   <h3 class="mt-4">Enter something that you might forget!</h3>
-  <form 
-    class="flex flex-col gap-8 mt-16 max-w-2xl w-full" 
-    @submit.prevent="submitNote"
-  >
-    <input
-      v-model="title" 
-      class="input" 
-      type="text" 
-      name="title" 
-      placeholder="Groceries to buy"
-    >
-    <textarea 
-      v-model="content" 
-      class="textarea h-24" 
-      name="content" 
-      rows="20" 
-      cols="50" 
-      placeholder="Toothpaste, Tomatoes, Saucisson"
-      @keydown.enter="submitNote"
-    />
-    <button
-      type="submit" 
-      class="bg-gray-700 px-4 py-4 text-white mt-6 rounded-sm text-xl"
-    >
-      Send note
-    </button>
-  </form>
+  <NoteForm 
+    v-model:title="title"
+    v-model:content="content"
+    @create-note="submitNote"
+  />
 </template>
 
 <script setup>
 import { ref } from 'vue'
+import { NoteForm } from '../../components/NoteForm'
 import { postNote } from '../../lib/note'
 
 const title = ref('')
 const content = ref('')
+
 const submitNote = () => {
+  console.log(title.value, content.value)
   postNote({ title: title.value, content: content.value })
     .finally(() => {
       title.value = ''

@@ -6,17 +6,19 @@
     v-if="notesComputed.length"
     class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 justify-center" 
   >
-    <div
+    <NoteListItem 
       v-for="note in notesComputed"
       :key="note.id"
-      class="flex flex-col items-center bg-white p-4 h-96 rounded-md"
-    >
-      <NoteListItem 
-        :note="note" 
-        @delete="removeNote(note.id)"
-        @update="updateNote(note.id, $event)"
-      />
-    </div>
+      :note="note" 
+      @delete="removeNote(note.id)"
+      @update="updateNote(note.id, $event)"
+    />
+  </div>
+  <div
+    v-else
+    class="text-3xl mt-8"
+  >
+    Add a new note!
   </div>
 </template>
 
