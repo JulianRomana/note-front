@@ -1,13 +1,3 @@
-<template>
-  <h1 class="text-4xl">Welcome to notes</h1>
-  <h3 class="mt-4">Enter something that you might forget!</h3>
-  <NoteForm
-    v-model:title="title"
-    v-model:content="content"
-    @create-note="submitNote"
-  />
-</template>
-
 <script setup>
 import { ref } from 'vue'
 import { NoteForm } from '../../components/NoteForm'
@@ -24,3 +14,13 @@ const submitNote = () => {
     })
 }
 </script>
+
+<template>
+  <h1 class="text-4xl">Welcome to notes</h1>
+  <h3 class="mt-4">Enter something that you might forget!</h3>
+  <NoteForm
+    v-model:title="title"
+    v-model:content="content"
+    @create-note="submitNote"
+  />
+</template>

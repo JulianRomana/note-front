@@ -18,7 +18,6 @@ module.exports = {
     quotes: ['error', 'single'],
     'no-trailing-spaces': 'error',
     'no-multiple-empty-lines': ['error', { max: 1, maxBOF: 1 }],
-    'vue/no-multiple-template-root': [0],
     'no-param-reassign': 'off',
     'import/prefer-default-export': 'off',
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',

@@ -29,12 +29,12 @@
     <div class="grid grid-flow-col gap-4 mt-auto">
       <button
         type="submit"
-        class="bg-gray-700 px-4 py-2 text-white mt-6 rounded-sm text-lg"
+        class="button"
       >
         {{ isEditing ? 'Save' : 'Edit' }}
       </button>
       <button
-        class="bg-red-700 px-4 py-2 text-white mt-6 rounded-sm text-lg"
+        class="button danger"
         @click="$emit('delete')"
       >
         Remove

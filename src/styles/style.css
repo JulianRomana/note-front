@@ -1,18 +1,4 @@
 @import './main.css';
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import './classes.css';
 
-.input {
-  @apply h-12 p-3 rounded-sm text-gray-700 text-lg;
-}
-.input:focus {
-  outline: none;
-}
 
-.textarea {
-  @apply p-3 rounded-sm text-gray-700 text-lg resize-none;
-}
-.textarea:focus {
-  outline: none;
-}
