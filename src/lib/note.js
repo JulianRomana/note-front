@@ -1,6 +1,7 @@
 import axios from 'axios'
 
 const { VITE_API_URL: API_URL} = import.meta.env
+const JWT = localStorage.getItem('token')
 
 const postNote = async ({ title, content }) => {
   try {
@@ -13,7 +14,11 @@ const postNote = async ({ title, content }) => {
 
 const getNote = async () => {
   try {
-    const { data } = await axios.get(`${API_URL}/note`)
+    const { data } = await axios.get(`${API_URL}/note`, {
+      headers: {
+        'authorization': JWT ? `Bearer ${JWT}` : ''
+      }
+    })
     return data
   } catch(err) {
     Promise.reject(err)
