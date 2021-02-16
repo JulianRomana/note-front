@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-import { notesComputed, fetchNotes, removeNote, updateNote } from '../../store/notes-store'
+import { notesComputed, fetchNotes, removeNote, updateNote } from '@/store/notes-store'
 import NoteListItem from './components/NotesListItem.vue'
 
 fetchNotes()

@@ -34,7 +34,7 @@
 
 <script setup>
 import { ref } from 'vue'
-import { createAccount } from '../../lib/user'
+import { createAccount } from '@/lib/user'
 
 const email = ref('')
 const username = ref('')

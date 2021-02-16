@@ -6,5 +6,5 @@
 </template>
 
 <script setup>
-import { Navbar } from './components/Navbar'
+import { Navbar } from '@/components/Navbar'
 </script>

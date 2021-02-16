@@ -1,5 +1,5 @@
 import { ref, computed, } from 'vue'
-import { getNote, deleteNote, putNote, postNote } from '../lib/note'
+import { getNote, deleteNote, putNote, postNote } from '@/lib/note'
 
 const notes = ref([])
 const notesComputed = computed(() => notes.value)
