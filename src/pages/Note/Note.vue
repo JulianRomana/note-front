@@ -11,7 +11,9 @@
 <script setup>
 import { ref } from 'vue'
 import { NoteForm } from '@/components/NoteForm'
-import { addNote } from '@/store/notes-store'
+import notes from '@/store/notes-store'
+
+const { addNote } = notes
 
 const title = ref('')
 const content = ref('')
