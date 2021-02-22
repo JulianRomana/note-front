@@ -1,11 +1,8 @@
-import axios from 'axios'
-
-const { VITE_API_URL: API_URL} = import.meta.env
-const JWT = localStorage.getItem('token')
+import axios from '@/config/axios'
 
 const postNote = async ({ title, content }) => {
   try {
-    const { data } = await axios.post(`${API_URL}/note`, { title, content })
+    const { data } = await axios.post('/note', { title, content })
     return data
   } catch(err) {
     Promise.reject(err)
@@ -14,11 +11,7 @@ const postNote = async ({ title, content }) => {
 
 const getNote = async () => {
   try {
-    const { data } = await axios.get(`${API_URL}/note`, {
-      headers: {
-        'authorization': JWT ? `Bearer ${JWT}` : ''
-      }
-    })
+    const { data } = await axios.get('/note')
     return data
   } catch(err) {
     Promise.reject(err)
@@ -27,14 +20,14 @@ const getNote = async () => {
 
 const deleteNote = async id => {
   try {
-    return axios.delete(`${API_URL}/note/${id}`)
+    return axios.delete(`/note/${id}`)
   } catch(err) {
     Promise.reject(err)
   }
 }
 const putNote = async (id, data) => {
   try {
-    return axios.put(`${API_URL}/note/${id}`, data)
+    return axios.put(`/note/${id}`, data)
   } catch(err) {
     Promise.reject(err)
   }

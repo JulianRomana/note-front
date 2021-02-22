@@ -10,8 +10,8 @@ export default (() => {
     addNote: (data) => postNote(data),
     updateNote: (id, data) => putNote(id, data),
     removeNote: async (id) => {
-      await deleteNote(id)
-      notes.value = filterNotes(id)
+      const { data } = await deleteNote(id)
+      notes.value = filterNotes(data.id)
     },
     fetchNotes: async () => {
       const { data } = await getNote()
