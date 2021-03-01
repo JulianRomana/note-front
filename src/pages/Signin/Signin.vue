@@ -3,7 +3,7 @@
     class="max-w-2xl w-full"
     @submit.prevent="login"
   >
-    <h1 class="text-white text-3xl">
+    <h1 class="text-white text-4xl">
       Login to your account
     </h1>
     <p class="mt-4 mb-16">Connect to find the notes that you already saved!</p>

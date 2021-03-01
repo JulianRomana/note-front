@@ -1,5 +1,5 @@
 <template>
-  <div>Signup</div>
+  <div class="text-4xl">Signup</div>
   <form
     class="flex flex-col gap-8 mt-16 max-w-2xl w-full"
     @submit.prevent="submitForm"
@@ -21,7 +21,7 @@
       class="input"
       type="password"
       placeholder="password"
-      autocomplete
+      autocomplete="on"
     >
     <button
       type="submit"
@@ -35,6 +35,7 @@
 <script setup>
 import { ref } from 'vue'
 import { createAccount } from '@/lib/user'
+import { setUserAuthorization } from '@/store/user-store'
 
 const email = ref('')
 const username = ref('')
@@ -47,5 +48,6 @@ const submitForm = async () => {
     password: password.value
   })
   localStorage.setItem('token', token)
+  setUserAuthorization(true)
 }
 </script>
