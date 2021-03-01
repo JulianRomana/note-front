@@ -5,22 +5,20 @@ import { Notes } from '@/pages/Notes'
 import { Signin } from '@/pages/Signin'
 import { Signup } from '@/pages/Signup'
 
+const authGuard = () => isSignedIn.value || '/signin'
+
 const routes = [
   {
     path: '/',
     name: 'home',
     component: Note,
-    beforeEnter() {
-      if(!isSignedIn.value) return '/signin'
-    },
+    beforeEnter: [authGuard],
   },
   {
     path: '/notes',
     name: 'notes',
     component: Notes,
-    beforeEnter() {
-      if(!isSignedIn.value) return '/signin'
-    },
+    beforeEnter: [authGuard],
   },
   {
     path: '/signin',
