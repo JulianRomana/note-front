@@ -19,7 +19,7 @@
     "eslint-plugin-vue": "^7.5.0",
     "prettier": "^2.2.1",
     "stylelint-config-recommended": "^3.0.0",
-    "vite": "^2.0.0-beta.48",
-    "vite-plugin-windicss": "^0.1.15"
+    "vite": "^2.0.5",
+    "vite-plugin-windicss": "^0.6.5"
   }
 }

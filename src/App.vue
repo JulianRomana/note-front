@@ -4,11 +4,13 @@
       min-h-screen
       h-full
       max-w-full
-      py-20 px-16
-      flex flex-col
-      items-center"
+      py-20
+      px-16
+      flex
+      flex-col
+      items-center
+    "
   >
-
     <Navbar />
     <router-view />
   </div>

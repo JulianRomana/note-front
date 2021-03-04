@@ -36,6 +36,9 @@
 import { ref } from 'vue'
 import { createAccount } from '@/lib/user'
 import { setUserAuthorization } from '@/store/user-store'
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
 
 const email = ref('')
 const username = ref('')
@@ -49,5 +52,6 @@ const submitForm = async () => {
   })
   localStorage.setItem('token', token)
   setUserAuthorization(true)
+  router.push({ name: 'home' })
 }
 </script>

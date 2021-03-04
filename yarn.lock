@@ -157,6 +157,17 @@
   resolved "https://registry.yarnpkg.com/@vue/shared/-/shared-3.0.5.tgz#c131d88bd6713cc4d93b3bb1372edb1983225ff0"
   integrity sha512-gYsNoGkWejBxNO6SNRjOh/xKeZ0H0V+TFzaPzODfBjkAIb0aQgBuixC1brandC/CDJy1wYPwSoYrXpvul7m6yw==
 
+"@windicss/plugin-utils@0.6.5":
+  version "0.6.5"
+  resolved "https://registry.yarnpkg.com/@windicss/plugin-utils/-/plugin-utils-0.6.5.tgz#c37082ea3e52c605508e7fb9b7331cb80b140441"
+  integrity sha512-8ZZdauxS+d3AE7RQtk7R6cWgiHQ/IUvavv0vsfXHKdvEkwMyI/GUU01VLWTXWRsWyM2+D2F6/HOgUxmxYQx5Sg==
+  dependencies:
+    esbuild "^0.8.54"
+    esbuild-register "^2.0.0"
+    fast-glob "^3.2.5"
+    micromatch "^4.0.2"
+    windicss "^2.2.3"
+
 acorn-jsx@^5.2.0, acorn-jsx@^5.3.1:
   version "5.3.1"
   resolved "https://registry.yarnpkg.com/acorn-jsx/-/acorn-jsx-5.3.1.tgz#fc8661e11b7ac1539c47dbfea2e72b3af34d267b"
@@ -378,10 +389,15 @@ enquirer@^2.3.5:
   dependencies:
     ansi-colors "^4.1.1"
 
-esbuild@^0.8.34:
-  version "0.8.34"
-  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.8.34.tgz#16b4ac58f74c821d2c5a8c2f0585ca96a38ab4e6"
-  integrity sha512-tnr0V1ooakYr1aRLXQLzCn2GVG1kBTW3FWpRyC+NgrR3ntsouVpJOlTOV0BS4YLATx3/c+x3h/uBq9lWJlUAtQ==
+esbuild-register@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/esbuild-register/-/esbuild-register-2.1.0.tgz#b1459c1970885e1226f31de1bea595a5c2922b11"
+  integrity sha512-NS/ptwYqFfmRT50SwRuxlwuKDwraijsqhDjngX4QyYj5VxSlbujbglQbXTz1qrRQhZRhx4Ap9369W7t+aJtdmQ==
+
+esbuild@^0.8.52, esbuild@^0.8.54:
+  version "0.8.55"
+  resolved "https://registry.yarnpkg.com/esbuild/-/esbuild-0.8.55.tgz#4bf949c44db4ffc2a206ac0c002e8e94eecff7d5"
+  integrity sha512-mM/s7hjYe5mQR+zAWOM5JVrCtYCke182E9l1Bbs6rG5EDP3b1gZF9sHZka53PD/iNt6OccymVZRWkTtBfcKW4w==
 
 escape-string-regexp@^1.0.5:
   version "1.0.5"
@@ -599,10 +615,10 @@ fs.realpath@^1.0.0:
   resolved "https://registry.yarnpkg.com/fs.realpath/-/fs.realpath-1.0.0.tgz#1504ad2523158caa40db4a2787cb01411994ea4f"
   integrity sha1-FQStJSMVjKpA20onh8sBQRmU6k8=
 
-fsevents@~2.1.2:
-  version "2.1.3"
-  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.1.3.tgz#fb738703ae8d2f9fe900c33836ddebee8b97f23e"
-  integrity sha512-Auw9a4AxqWpa9GUfj370BMPzzyncfBABW8Mab7BGWBYDj4Isgq+cDKtx0i6u9jcX9pQDnswsaaOTgTmA5pEjuQ==
+fsevents@~2.3.1:
+  version "2.3.2"
+  resolved "https://registry.yarnpkg.com/fsevents/-/fsevents-2.3.2.tgz#8a526f78b8fdf4623b709e0b975c52c24c02fd1a"
+  integrity sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==
 
 function-bind@^1.1.1:
   version "1.1.1"
@@ -1068,12 +1084,12 @@ rimraf@^3.0.2:
   dependencies:
     glob "^7.1.3"
 
-rollup@^2.35.1:
-  version "2.38.0"
-  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.38.0.tgz#57942d5a10826cb12ed1f19c261f774efa502d2d"
-  integrity sha512-ay9zDiNitZK/LNE/EM2+v5CZ7drkB2xyDljvb1fQJCGnq43ZWRkhxN145oV8GmoW1YNi4sA/1Jdkr2LfawJoXw==
+rollup@^2.38.5:
+  version "2.40.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.40.0.tgz#efc218eaede7ab590954df50f96195188999c304"
+  integrity sha512-WiOGAPbXoHu+TOz6hyYUxIksOwsY/21TRWoO593jgYt8mvYafYqQl+axaA8y1z2HFazNUUrsMSjahV2A6/2R9A==
   optionalDependencies:
-    fsevents "~2.1.2"
+    fsevents "~2.3.1"
 
 run-parallel@^1.1.9:
   version "1.2.0"
@@ -1238,25 +1254,25 @@ v8-compile-cache@^2.0.3:
   resolved "https://registry.yarnpkg.com/v8-compile-cache/-/v8-compile-cache-2.2.0.tgz#9471efa3ef9128d2f7c6a7ca39c4dd6b5055b132"
   integrity sha512-gTpR5XQNKFwOd4clxfnhaqvfqMpqEwr4tOtCyz4MtYZX2JYhfr1JvBFKdS+7K/9rfpZR3VLX+YWBbKoxCgS43Q==
 
-vite-plugin-windicss@^0.1.15:
-  version "0.1.15"
-  resolved "https://registry.yarnpkg.com/vite-plugin-windicss/-/vite-plugin-windicss-0.1.15.tgz#7ff8b27961d3be3b18127b17cb7cb5f2032d5d91"
-  integrity sha512-0BH//Qu0BdZMpuAtcdJE7i5p8YDVVmudFNWLGgykWnYge19Fqf3MRvxE10RTiFfwGXXm9fOQmvkb+M9z3H3kUA==
+vite-plugin-windicss@^0.6.5:
+  version "0.6.5"
+  resolved "https://registry.yarnpkg.com/vite-plugin-windicss/-/vite-plugin-windicss-0.6.5.tgz#14b6fc43fcbc2dc143b33c83c58e3f7fe820aa9a"
+  integrity sha512-zEpPlVRaXQbgA0Tsj/N4Kt1jAEZ2aMqVrq4/LaTekS0LCdtD1sQXoadAz2Af/N+qA7ICu8VBpijONH6c8AS4Xg==
   dependencies:
-    fast-glob "^3.2.5"
-    windicss "^2.1.9"
+    "@windicss/plugin-utils" "0.6.5"
+    windicss "^2.2.3"
 
-vite@^2.0.0-beta.48:
-  version "2.0.0-beta.48"
-  resolved "https://registry.yarnpkg.com/vite/-/vite-2.0.0-beta.48.tgz#76938af039fedd62177c3305b6195f8d25eb591a"
-  integrity sha512-PmyRdMV4gxGCW9z7e/zPQzEibBzDDGF8K1Rxdw5/JsuijYYG4Kc43erDyJ8FnQ0s1ne3NAJNgbMy00QJ4NKMIw==
+vite@^2.0.5:
+  version "2.0.5"
+  resolved "https://registry.yarnpkg.com/vite/-/vite-2.0.5.tgz#ac46857a3fa8686d077921e61bd48a986931df1d"
+  integrity sha512-QTgEDbq1WsTtr6j+++ewjhBFEk6c8v0xz4fb/OWJQKNYU8ZZtphOshwOqAlnarSstPBtWCBR0tsugXx6ajfoUg==
   dependencies:
-    esbuild "^0.8.34"
+    esbuild "^0.8.52"
     postcss "^8.2.1"
     resolve "^1.19.0"
-    rollup "^2.35.1"
+    rollup "^2.38.5"
   optionalDependencies:
-    fsevents "~2.1.2"
+    fsevents "~2.3.1"
 
 vue-eslint-parser@^7.4.1:
   version "7.4.1"
@@ -1291,10 +1307,10 @@ which@^2.0.1:
   dependencies:
     isexe "^2.0.0"
 
-windicss@^2.1.9:
-  version "2.1.9"
-  resolved "https://registry.yarnpkg.com/windicss/-/windicss-2.1.9.tgz#44bc745b4a02f2f3ded8b0f71ca3857d96ad8f08"
-  integrity sha512-ezVx55DnMuIlNiWO5/Y7RECoQie7T8bu2TIlQcVqPOX5N+c01Q3zRGwI45CmovsaXuMrFdsuCwfoTjDNmvie1w==
+windicss@^2.2.3:
+  version "2.2.6"
+  resolved "https://registry.yarnpkg.com/windicss/-/windicss-2.2.6.tgz#1e1b40ca329f8dd5ab735734212f9f91c9497004"
+  integrity sha512-RK502Xwsw0ptjVueJum0TEr286YJgtqK6kXpa60R6a1z2gGkVpEcaIfr6okQ5EYUk8WMRLrXoK6B2E6dSRg/sw==
 
 word-wrap@^1.2.3:
   version "1.2.3"

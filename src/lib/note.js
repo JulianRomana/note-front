@@ -25,7 +25,7 @@ const deleteNote = async id => {
     Promise.reject(err)
   }
 }
-const putNote = async (id, data) => {
+const putNote = async ({ id, data }) => {
   try {
     return axios.put(`/note/${id}`, data)
   } catch(err) {

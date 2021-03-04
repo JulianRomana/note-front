@@ -9,9 +9,16 @@
       </router-link>
       <router-link
         to="/notes"
+        class="mr-4"
       >
         your notes
       </router-link>
+      <span
+        class="text-red-700 cursor-pointer"
+        @click="logout"
+      >
+        logout
+      </span>
     </template>
     <template v-else>
       <router-link
@@ -28,6 +35,14 @@
 </template>
 
 <script setup>
-import { isSignedIn } from '@/store/user-store'
+import { useRouter } from 'vue-router'
+import { isSignedIn, setUserAuthorization } from '@/store/user-store'
 
+const router = useRouter()
+
+const logout = () => {
+  localStorage.removeItem('token')
+  setUserAuthorization(false)
+  router.push({ name: 'signin' })
+}
 </script>

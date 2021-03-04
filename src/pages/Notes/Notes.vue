@@ -15,16 +15,16 @@
       :key="note.id"
       :note="note"
       @delete="removeNote(note.id)"
-      @update="updateNote(note.id, $event)"
+      @update="updateNote({ id: note.id, data: $event })"
     />
   </div>
 </template>
 
 <script setup>
-import note from '@/store/notes-store'
+import { useNote } from '@/store/notes-store'
 import NoteListItem from './components/NotesListItem.vue'
 
-const { fetchNotes, notesComputed, removeNote, updateNote } = note
+const { fetchNotes, notesComputed, removeNote, updateNote } = useNote()
 
 fetchNotes()
 </script>
