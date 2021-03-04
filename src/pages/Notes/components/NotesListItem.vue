@@ -27,24 +27,22 @@
       @keypress.enter.exact="edit"
     />
     <div class="grid grid-flow-col gap-4 mt-auto">
-      <button
-        type="submit"
-        class="button"
-      >
+      <Button type="submit">
         {{ isEditing ? 'Save' : 'Edit' }}
-      </button>
-      <button
-        class="button danger"
+      </Button>
+      <Button
+        danger
         @click="$emit('delete')"
       >
         Remove
-      </button>
+      </Button>
     </div>
   </form>
 </template>
 
 <script setup>
-import { ref, toRefs, defineProps, defineEmit } from 'vue'
+  import { ref, toRefs, defineProps, defineEmit } from 'vue'
+  import { Button } from '@/components/Button'
 
 const props = defineProps({ note: Object })
 const emit = defineEmit(['delete', 'update'])

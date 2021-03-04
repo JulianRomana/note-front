@@ -1,4 +1,4 @@
-import { ref, computed, } from 'vue'
+import { ref, computed } from 'vue'
 import { getNote, deleteNote, putNote, postNote } from '@/lib/note'
 
 const privateNotes = ref([])

@@ -9,17 +9,17 @@
       type="text"
       name="title"
       placeholder="Groceries to buy"
-      @input="$emit('update:title', $event.target.value)"
+      @input="emit('update:title', $event.target.value)"
     >
     <textarea
       v-model="content"
       class="textarea h-24"
       name="content"
-      rows="20"
-      cols="50"
+      :rows="20"
+      :cols="50"
       placeholder="Toothpaste, Tomatoes, Saucisson"
       @keydown.enter="emit('create-note')"
-      @input="$emit('update:content', $event.target.value)"
+      @input="emit('update:content', $event.target.value)"
     />
     <button
       type="submit"
