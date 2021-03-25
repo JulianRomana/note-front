@@ -13,13 +13,13 @@ import { ref } from 'vue'
 import { NoteForm } from '@/components/NoteForm'
 import { useNote } from '@/store/notes-store'
 
-const { addNote } = useNote()
+const { postNote } = useNote()
 
 const title = ref('')
 const content = ref('')
 
 const submitNote = () => {
-  addNote({ title: title.value, content: content.value })
+  postNote({ title: title.value, content: content.value })
     .finally(() => {
       title.value = ''
       content.value = ''

@@ -8,8 +8,8 @@ const useNote = (notes = privateNotes) => {
 
   return {
     notesComputed: computed(() => notes.value),
-    addNote: (data) => postNote(data),
-    updateNote: ({ id, data }) => putNote({ id, data }),
+    postNote,
+    putNote,
     removeNote: async (id) => {
       const { data } = await deleteNote(id)
       notes.value = filterNotes(data.id)

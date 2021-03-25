@@ -1,14 +1,25 @@
-import axios from 'axios'
-
-const { VITE_API_URL: API_URL} = import.meta.env
+import axios from '@/config/axios'
 
 const createAccount = async ({ username, email, password }) => {
   try {
-    const { data: { data } } = await axios.post(`${API_URL}/user`, { username, email, password })
+    const { data: { data } } = await axios.post('/user', { username, email, password })
     return data.token
   } catch(err) {
-    Promise.reject(err)
+    throw new Error(err)
   }
 }
 
-export { createAccount }
+const login = async ({ email, password }) => {
+  try {
+    const { data: { data } } = await axios.post('/user/login', { email, password })
+    return data.token
+  } catch({ response }) {
+    const { message } = response.data
+    throw new Error(message)
+  }
+}
+
+export {
+  createAccount,
+  login
+}

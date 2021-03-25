@@ -1,7 +1,8 @@
 <template>
-  <div class="text-4xl">Signup</div>
+  <div class="text-4xl text-white ">Signup</div>
+  <p class="mt-4 mb-16">Create an account to use notes</p>
   <form
-    class="flex flex-col gap-8 mt-16 max-w-2xl w-full"
+    class="flex flex-col gap-8 max-w-2xl w-full"
     @submit.prevent="submitForm"
   >
     <input

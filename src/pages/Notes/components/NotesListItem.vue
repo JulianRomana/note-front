@@ -41,8 +41,8 @@
 </template>
 
 <script setup>
-  import { ref, toRefs, defineProps, defineEmit } from 'vue'
-  import { Button } from '@/components/Button'
+import { ref, toRefs, defineProps, defineEmit } from 'vue'
+import { Button } from '@/components/Button'
 
 const props = defineProps({ note: Object })
 const emit = defineEmit(['delete', 'update'])

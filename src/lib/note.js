@@ -5,7 +5,7 @@ const postNote = async ({ title, content }) => {
     const { data } = await axios.post('/note', { title, content })
     return data
   } catch(err) {
-    Promise.reject(err)
+    throw new Error(err)
   }
 }
 
@@ -14,7 +14,7 @@ const getNote = async () => {
     const { data } = await axios.get('/note')
     return data
   } catch(err) {
-    Promise.reject(err)
+    throw new Error(err)
   }
 }
 
@@ -22,14 +22,14 @@ const deleteNote = async id => {
   try {
     return axios.delete(`/note/${id}`)
   } catch(err) {
-    Promise.reject(err)
+    throw new Error(err)
   }
 }
 const putNote = async ({ id, data }) => {
   try {
     return axios.put(`/note/${id}`, data)
   } catch(err) {
-    Promise.reject(err)
+    throw new Error(err)
   }
 }
 
